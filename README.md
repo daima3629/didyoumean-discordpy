@@ -1,13 +1,12 @@
 # didyoumean-discordpy
-[![GitHub license](https://img.shields.io/github/license/daima3629/didyoumean-discordpy)](https://github.com/daima3629/didyoumean-discordpy/blob/master/LICENSE)
+![PyPI](https://img.shields.io/pypi/v/didyoumean-discordpy) [![GitHub license](https://img.shields.io/github/license/daima3629/didyoumean-discordpy)](https://github.com/daima3629/didyoumean-discordpy/blob/master/LICENSE)
 
 ## description
 [discord.py](https://github.com/Rapptz/discord.py)のcommandsフレームワークの拡張ライブラリです。  
 画像のように、間違ったコマンドを打ったとき、似たコマンドが見つかった場合にそのコマンドを表示させることができます。  
 ![](https://i.imgur.com/HMdXF1I.png)  
 
-- デフォルトでは3件まで似たコマンドを表示させることができます。
-- 似たコマンドが見つからなかった場合は[`Bot.on_command_error`](https://discordpy.readthedocs.io/en/latest/ext/commands/api.html#discord.ext.commands.Bot.on_command_error)を呼び出します。
+デフォルトでは3件まで似たコマンドを表示させることができます。
 
 ## how to use
 1. インストール
