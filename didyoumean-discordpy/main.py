@@ -5,6 +5,19 @@ from typing import Optional, Mapping, List
 
 
 class DidYouMean(commands.Cog):
+    """
+    Core class of this library.
+
+    Attributes
+    ----------
+    bot
+        The bot object.
+    matcher_dict : Mapping[str, difflib.SequenceMatcher]
+        A dict for storing matchers.
+    max_suggest : int
+        Maximum number of suggestions.
+
+    """
     def __init__(self, bot) -> None:
         self.bot = bot
         self.matcher_dict: Mapping[str, difflib.SequenceMatcher] = {}
@@ -12,6 +25,20 @@ class DidYouMean(commands.Cog):
         self._message_generator = DefaultMessageGenerator
 
     def set_message_generator(self, generator) -> None:
+        """
+        The function to set message generator.
+
+        Parameters
+        ----------
+        generator
+            This class inherits from the `MessageGenerator` class.
+
+        Raises
+        ------
+        TypeError
+            If the class does not inherit from `MessageGenerator`.
+
+        """
         if not isinstance(generator, MessageGenerator):
             raise TypeError("Message generator must extend 'MessageGenerator'.")
 
