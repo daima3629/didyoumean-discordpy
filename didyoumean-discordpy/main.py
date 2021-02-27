@@ -68,7 +68,6 @@ class DidYouMean(commands.Cog):
     @commands.Cog.listener()
     async def on_command_error(self, ctx, err) -> None:
         if not isinstance(err, commands.CommandNotFound):
-            await self.bot.on_command_error(ctx, err)
             return
 
         invalid_command_name = ctx.message.content.split()[0][len(ctx.prefix):]
