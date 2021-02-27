@@ -8,6 +8,7 @@ class DidYouMean:
     def __init__(self, bot) -> None:
         self.bot = bot
         self.matcher_dict: Mapping[str, difflib.SequenceMatcher] = {}
+        self.max_suggest = 3
         self._message_generator = DefaultMessageGenerator
 
     def set_message_generator(self, generator) -> None:
@@ -32,7 +33,7 @@ class DidYouMean:
                 similar_cmd_list.append((name, ratio))
 
         similar_cmd_list.sort(key=lambda c: c[1], reverse=True)
-        return [c[0] for c in similar_cmd_list]
+        return [c[0] for c in similar_cmd_list][:self.max_suggest]
 
     @commands.Cog.listener()
     async def on_command_error(self, ctx, err) -> None:
