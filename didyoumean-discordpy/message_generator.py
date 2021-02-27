@@ -14,6 +14,13 @@ class MessageGenerator:
         The invalid command name.
     similar_cmd_list : List[str]
         The similar command name list to `invalid_cmd_name`.
+
+    Attributes
+    ----------
+    invalid_command_name : str
+        The invalid command name.
+    similar_cmd_list : List[str]
+        The similar command name list to `invalid_cmd_name`.
     """
     def __init__(self, invalid_cmd_name: str, similar_cmd_list: List[str]) -> None:
         self.invalid_cmd_name = invalid_cmd_name
