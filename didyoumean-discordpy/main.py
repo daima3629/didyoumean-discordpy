@@ -91,6 +91,10 @@ class DidYouMean(commands.Cog):
                     self._command_names.add(prefix_str + name)
 
     @commands.Cog.listener()
+    async def on_ready(self):
+        self._listup_commands(self.bot)
+
+    @commands.Cog.listener()
     async def on_command_error(self, ctx, err) -> None:
         if not isinstance(err, commands.CommandNotFound):
             return
