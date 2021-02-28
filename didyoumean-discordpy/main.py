@@ -95,7 +95,7 @@ class DidYouMean(commands.Cog):
         if not isinstance(err, commands.CommandNotFound):
             return
 
-        invalid_command = ctx.message.content.lstrip(ctx.prefix)[self._max_command_length]
+        invalid_command = ctx.message.content.lstrip(ctx.prefix)[:self._max_command_length]
         similar_list = self.similar_factor_extraction(invalid_command)
         if similar_list is None:
             return
