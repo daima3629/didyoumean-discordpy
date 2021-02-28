@@ -5,7 +5,7 @@ with open("README.md", "r") as f:
 
 setuptools.setup(
     name="didyoumean-discordpy",
-    version="0.1.2",
+    version="0.2.0",
     author="daima3629",
     author_email="daima3629@usbc.be",
     description="A discord.py extension for command name suggestion",
