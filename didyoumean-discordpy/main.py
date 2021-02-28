@@ -24,7 +24,7 @@ class DidYouMean(commands.Cog):
         self.max_suggest = 3
         self._command_names: Set[str] = set()
         self._listup_commands(self.bot)
-        self._max_command_length = max(map(len(c) for c in self._command_names))
+        self._max_command_length = max((len(c) for c in self._command_names))
         self._message_generator = DefaultMessageGenerator
 
     def set_message_generator(self, generator) -> None:
